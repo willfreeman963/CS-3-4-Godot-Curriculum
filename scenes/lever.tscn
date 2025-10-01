@@ -42,7 +42,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3flmr")
 }],
 "loop": false,
-"name": &"default",
+"name": &"Switched",
 "speed": 5.0
 }]
 
@@ -54,6 +54,9 @@ script = ExtResource("1_4kwec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_igrgq")
+animation = &"Switched"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jxk16")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
