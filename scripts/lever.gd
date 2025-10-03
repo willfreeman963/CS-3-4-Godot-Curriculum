@@ -1,5 +1,5 @@
 extends Area2D
-
+@export var Lever: bool = false;
 
 func play_animation(reverse: bool = false) -> void:
 	var speed: int
@@ -13,3 +13,4 @@ func play_animation(reverse: bool = false) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		$AnimatedSprite2D.play("Switched")
+		Lever = true;
