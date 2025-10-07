@@ -1,11 +1,14 @@
-extends AnimatableBody2D
+extends StaticBody2D
 @onready var lever: Area2D = $"../Lever"
-var Lever = lever.Lever
+var is_closed = true
+#var Lever = lever.Lever
+func _process(delta):
+	leverDetect()
+	set_is_open()
 
 
-
-func set_is_open(is_open: bool) -> void:
-	if is_open:
+func set_is_open() -> void:
+	if is_closed:
 		$AnimatedSprite2D.frame = 0
 		collision_layer = 1
 		$LightOccluder2D.visible = false
@@ -14,7 +17,7 @@ func set_is_open(is_open: bool) -> void:
 		collision_layer = 0
 		$LightOccluder2D.visible = true
 		
-func leverDetect(is_open):
+func leverDetect():
 	if lever != null:
-		if Lever == true:
-			is_open = true
+		if lever.Lever == true:
+			is_closed = false
