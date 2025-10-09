@@ -26,9 +26,7 @@ func _on_body_entered(body):
 		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.play()
 		
-		# Start cooldown to prevent spam damage
-		can_damage = false
-		get_tree().create_timer(damage_cooldown).timeout.connect(_reset_damage_cooldown)
+
 
 func _reset_damage_cooldown():
 	can_damage = true
