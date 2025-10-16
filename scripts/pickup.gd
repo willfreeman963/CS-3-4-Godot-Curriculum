@@ -14,7 +14,7 @@ var collected: bool = false
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
-	# Set the color of the pickup
+	#Set the color of the pickup
 	if $AnimatedSprite2D.material != null:
 		$AnimatedSprite2D.material.set_shader_parameter("color", color)
 	configure_pickup(type, label)
@@ -37,6 +37,7 @@ func _on_body_entered(body):
 				pass
 
 func configure_pickup(_type : String, _label : String) -> bool:
+
 	if _type == "coin":
 		if _label == "copper":
 			amount = 1
@@ -56,7 +57,8 @@ func configure_pickup(_type : String, _label : String) -> bool:
 			amount = 100
 			return true
 		else: return false
+	if _type == "chest":
+		amount = 50
+		return true
 	else: return false
 		
-			
-			

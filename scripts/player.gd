@@ -8,7 +8,7 @@ class_name Player
 @export var maxHealth : int = 100
 @export var health : int = maxHealth
 @export var coins : int = 0
-
+#@export var description = get_node(itemDescription)
 
 var facing: Vector2 = Vector2.ZERO
 
@@ -84,3 +84,4 @@ func die():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit(0)
+		
