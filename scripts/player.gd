@@ -55,6 +55,7 @@ func handle_sprite(direction: Vector2) -> void:
 		animated_sprite.flip_h = false
 
 func collect_pickup(_type : String, _amount : int):
+	print("collecting pickup")
 	if _type == "coin":
 		coins += _amount
 		print("Coins: " + str(coins))

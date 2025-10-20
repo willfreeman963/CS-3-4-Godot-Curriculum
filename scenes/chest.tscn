@@ -58,3 +58,5 @@ sprite_frames = SubResource("SpriteFrames_ilhio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kg5gm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -32,7 +32,6 @@ func _on_body_entered(body):
 			if auto_pickup:
 				if $AnimationPlayer.has_animation("disappear"):
 					$AnimationPlayer.play("disappear")
-				else: queue_free()
 			else:
 				pass
 
@@ -48,6 +47,9 @@ func configure_pickup(_type : String, _label : String) -> bool:
 		elif _label == "gold":
 			amount = 10
 			return true
+		elif _label == "chest":
+			amount = 50
+			return true
 		else: return false
 	elif _type == "health_potion":
 		if _label == "small":
@@ -57,8 +59,5 @@ func configure_pickup(_type : String, _label : String) -> bool:
 			amount = 100
 			return true
 		else: return false
-	if _type == "chest":
-		amount = 50
-		return true
 	else: return false
 		
