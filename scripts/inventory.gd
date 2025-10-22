@@ -17,6 +17,9 @@ func displayInventory():
 		print(item.itemPrice)
 
 func addItem():
+	#check if player collides w/ item
+	#add item to inventory
+	
 	pass
 	
 func removeItem():
