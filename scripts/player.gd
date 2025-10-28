@@ -85,4 +85,11 @@ func die():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit(0)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print(area)
+	if area.name == "Test":
+		$inventory.addItem(load("res://scripts/inventory_items/potion.tres"))
+		$inventory.displayInventory()
 		

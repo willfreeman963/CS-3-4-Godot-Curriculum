@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cpcjxr26k8tgw"]
+[gd_scene load_steps=16 format=4 uid="uid://cpcjxr26k8tgw"]
 
 [ext_resource type="PackedScene" uid="uid://cqvpxnx2pwqhk" path="res://scenes/player.tscn" id="1_2j8vx"]
 [ext_resource type="Script" uid="uid://bnk74kv0ariww" path="res://scripts/game_world.gd" id="2_3k9wy"]
@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://c6cn64y21oke7" path="res://scenes/torch.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c8mf4562xlcu8" path="res://scenes/door.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://5p2ev4o8h7si" path="res://scenes/lever.tscn" id="8_85g3d"]
-[ext_resource type="PackedScene" uid="uid://3eyjart25ymd" path="res://scripts/inventory_items/potion.tscn" id="10_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://ku6r8jc43dr0" path="res://scripts/inventory_items/potion.tscn" id="10_eb6dy"]
+[ext_resource type="Script" uid="uid://12pickhyx586" path="res://scripts/inventory_items/speedPotion.gd" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://c6gaa4kprawy0" path="res://scenes/enemies/slime.tscn" id="11_ya4ey"]
+[ext_resource type="Resource" uid="uid://psmgvd0q356h" path="res://scripts/inventory_items/potion.tres" id="12_a8y0u"]
 
 [sub_resource type="Environment" id="Environment_jyhfs"]
 background_energy_multiplier = 0.1
@@ -79,6 +81,8 @@ label = "chest"
 
 [node name="Test" parent="Tilemap/StuffOnTop" instance=ExtResource("10_eb6dy")]
 position = Vector2(-210, 57.5)
+script = ExtResource("11_trceg")
+potion2 = ExtResource("12_a8y0u")
 
 [node name="Player" parent="." instance=ExtResource("1_2j8vx")]
 unique_name_in_owner = true

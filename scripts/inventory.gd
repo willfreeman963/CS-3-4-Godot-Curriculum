@@ -3,13 +3,14 @@ extends Node
 class_name inventory
 @export var items : Array[inventoryItem] = []
 var current_item: int = 0
-var max_size: int = 1
+var max_size: int = 5
 
 func _ready():
 	displayInventory()
 	pass
 	
 func _process(delta: float) -> void:
+	#print(items)
 	if Input.is_action_just_pressed("inventory_up"):
 		current_item -=1
 		if current_item < 0:
@@ -24,17 +25,16 @@ func selectItem():
 	pass
 
 func displayInventory():
-	print("The current item is " + "current_item")
+	print("The current item is " , current_item)
 	print("The cost is " + str(items[current_item].itemPrice))
-	for item in items:
-		print(item.itemDescription)
-		print(item.itemPrice)
 
-func addItem():
-	#check if player collides w/ item
-	#add item to inventory
+
+func addItem(item: inventoryItem):
 	
-	pass
+	if items.size() < max_size:
+		items.append(item)
+	else: print("our inventory is full, consider dropping an item or using an item first")
+	#check for collision
 	
 func removeItem():
 	pass
