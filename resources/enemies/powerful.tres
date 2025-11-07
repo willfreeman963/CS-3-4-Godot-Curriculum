@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://4uisvkkc62sk"]
+
+[ext_resource type="SpriteFrames" uid="uid://vb5a3rr6m1hr" path="res://resources/animations/red_slime_frames.tres" id="1_i2kdr"]
+[ext_resource type="Script" uid="uid://bxtjti5hlu2op" path="res://scripts/resources/enemy_resource.gd" id="2_l6eo6"]
+
+[resource]
+script = ExtResource("2_l6eo6")
+enemy_id = "powerful_slime"
+enemy_name = "Powerful Slime"
+animated_frames = ExtResource("1_i2kdr")
+sprite_scale = 2.0
+max_health = 150.0
+contact_damage = 8.0
+move_speed = 40.0
+detection_range = 800.0

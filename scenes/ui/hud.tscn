@@ -1,6 +1,94 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8wk4n6mqpr3m"]
+[gd_scene load_steps=16 format=3 uid="uid://c8wk4n6mqpr3m"]
 
-[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://spj03ofeblpa" path="res://scripts/ui/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" uid="uid://bvkck5lun847e" path="res://scenes/ui/New Piskel (6).png" id="2_hqnrr"]
+[ext_resource type="Texture2D" uid="uid://duwbp7bhl1gye" path="res://scripts/XP.png" id="3_bo48s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo48s"]
+atlas = ExtResource("2_hqnrr")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qguk"]
+atlas = ExtResource("2_hqnrr")
+region = Rect2(0, 32, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_136eg"]
+atlas = ExtResource("2_hqnrr")
+region = Rect2(0, 64, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj5la"]
+atlas = ExtResource("2_hqnrr")
+region = Rect2(0, 96, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gss2c"]
+atlas = ExtResource("2_hqnrr")
+region = Rect2(0, 128, 96, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h022r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo48s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qguk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_136eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj5la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gss2c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h022r"]
+atlas = ExtResource("3_bo48s")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jqwt"]
+atlas = ExtResource("3_bo48s")
+region = Rect2(0, 32, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kicr4"]
+atlas = ExtResource("3_bo48s")
+region = Rect2(0, 64, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj13f"]
+atlas = ExtResource("3_bo48s")
+region = Rect2(0, 96, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h1do"]
+atlas = ExtResource("3_bo48s")
+region = Rect2(0, 128, 96, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4d46k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h022r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jqwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kicr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj13f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h1do")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
@@ -24,9 +112,14 @@ size_flags_vertical = 0
 [node name="HealthBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
-max_value = 100.0
 value = 100.0
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/HealthBar"]
+position = Vector2(150, 15)
+scale = Vector2(3.1249995, 0.9375)
+sprite_frames = SubResource("SpriteFrames_h022r")
+autoplay = "default"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HealthBar"]
 layout_mode = 1
@@ -46,8 +139,13 @@ text = "Health: 100/100"
 [node name="XPBar" type="ProgressBar" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 25)
 layout_mode = 2
-max_value = 100.0
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/VBoxContainer/XPBar"]
+position = Vector2(150.00002, 11.499999)
+scale = Vector2(3.1041667, 0.78125)
+sprite_frames = SubResource("SpriteFrames_4d46k")
+autoplay = "default"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/XPBar"]
 layout_mode = 1
